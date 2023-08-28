@@ -1,0 +1,48 @@
+<div class="page">
+  <div class="title">
+    <h1>Tris</h1>
+    <p *ngIf="turn % 2 == 0&& turn<9 &&winner==false">X Turn</p>
+    <p *ngIf="turn % 2 != 0&& turn<9 &&winner==false">O Turn</p>
+    <p *ngIf="turn==9">Draw</p>
+    <p *ngIf="winner==true">Game Over</p>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div ngClass="{{box[0]=='×'?'red':'blue'}}" style="border-top-left-radius: 5px; " class="{{ winner ? 'win' : 'box' }}" (click)="press(0)">
+        {{ box[0] }}
+      </div>
+      <div ngClass="{{box[1]=='×'?'red':'blue'}}" style="animation-delay: 0.15s;" class="{{ winner ? 'win' : 'box' }}" (click)="press(1)">
+        {{ box[1] }}
+      </div>
+      <div ngClass="{{box[2]=='×'?'red':'blue'}}" style="border-top-right-radius: 5px;animation-delay: 0.3s;" class="{{ winner ? 'win' : 'box' }}" (click)="press(2)">
+        {{ box[2] }}
+      </div>
+    </div>
+    <div class="row">
+      <div ngClass="{{box[3]=='×'?'red':'blue'}}" class="{{ winner ? 'win' : 'box' }}" (click)="press(3)">
+        {{ box[3] }}
+      </div>
+      <div ngClass="{{box[4]=='×'?'red':'blue'}}" style="animation-delay: 0.15s;" class="{{ winner ? 'win' : 'box' }}" (click)="press(4)">
+        {{ box[4] }}
+      </div>
+    <div ngClass="{{box[5]=='×'?'red':'blue'}}" style="animation-delay: 0.3s;" class="{{ winner ? 'win' : 'box' }}" (click)="press(5)">
+      {{ box[5] }}
+    </div>
+  </div>
+  <div class="row">
+    <div ngClass="{{box[6]=='×'?'red':'blue'}}" style="border-bottom-left-radius: 5px;" class="{{ winner ? 'win' : 'box' }}" (click)="press(6)">
+      {{ box[6] }}
+    </div>
+    <div ngClass="{{box[7]=='×'?'red':'blue'}}" style="animation-delay: 0.15s;" class="{{ winner ? 'win' : 'box' }}" (click)="press(7)">
+      {{ box[7] }}
+    </div>
+    <div ngClass="{{box[8]=='×'?'red':'blue'}}" style="border-bottom-right-radius: 5px;animation-delay: 0.3s;" class="{{ winner ? 'win' : 'box' }}" (click)="press(8)">
+      {{ box[8] }}
+    </div>
+  </div>
+</div>
+<div class="reset">
+  <button style="width: 230px;" (click)="reset()">Play Again</button>
+</div>
+
+</div>
